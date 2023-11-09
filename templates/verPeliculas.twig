@@ -1,0 +1,47 @@
+{% include "cabecera.twig" %}
+
+<a href="../controlador/anadirPelicula.php" id="botonAnadir" class="btn btn-secondary">Añadir pelicula nueva</a>
+
+<style>
+    table {
+        font-size:12px;
+    }
+    </style>
+<form action="" method="post" id="formulario">
+    <label for="campo"><span>Buscar película:</span></label>
+    <input type="text" name ="campo" id="campo">
+</form>
+
+<p>&nbsp;</p>
+    <table>
+   {#      <thead>
+            <th>#</th>
+            <th>Titulo</th>
+            <th>Sinopsis</th>
+            <th>F.estreno</th>
+            <th>Duración</th>
+            <th colspan='2' class="col px-2 text-center">Acciones</th>
+        </thead> #}
+        <tbody id="contenido">
+        </tbody>
+</table>
+<script>
+    getData();// Parra hacer la carga inicial de datos
+    // Añado un evento al pulsar una tecla en el "campo"
+    document.getElementById("campo").addEventListener("keyup", getData);
+    function getData(){
+        //let input = document.getElementById("campo").value; 
+        let contenido = document.getElementById("contenido");
+        let url = "buscarPeliculas.php";
+        let formData = new FormData(document.getElementById("formulario"));
+        fetch(url,{
+            method:"post",
+            body: formData})
+            .then (response => response.json())
+            .then (data => {
+                contenido.innerHTML = data;
+            })
+            .catch (err => console.log(err))
+    }
+</script>
+{% include "footer.twig" %}

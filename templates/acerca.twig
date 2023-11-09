@@ -1,0 +1,108 @@
+{% include "cabecera.twig" %}
+
+<style>
+    table {
+        font-size:12px;
+    }
+    </style>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100"src="../images/gravity.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="../images/terminator.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="../images/wp1916208.jpg" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<h1 id="cartelera">Cartelera:</h1>
+<div id="fecha2"> 
+    <form action="" method="post" id="formulario">   
+    <label for="fecha">Fecha:</label>
+    <input type="date" name="fecha" id="fecha" >
+    </form>
+
+</div>
+<p>&nbsp;</p>
+    <table>
+  
+        <tbody id="contenido">
+        </tbody>
+</table>
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content"> 
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+let datos;
+    getData();// Para hacer la carga inicial de datos
+    // Añado un evento al pulsar una tecla en el "campo"
+    document.getElementById("fecha").addEventListener("change", getData);
+    function getData(){
+        //let input = document.getElementById("campo").value; 
+        let contenido = document.getElementById("contenido");
+        let url = "load.php";
+        let formData = new FormData(document.getElementById("formulario"));
+        fetch(url,{
+            method:"post",
+            body: formData})
+            .then (response => response.json())
+            .then (data => {
+                contenido.innerHTML = data.html;
+                datos = data.json;
+            })
+            .catch (err => console.log(err))
+    }
+
+
+
+
+</script>
+
+{% include "footer.twig" %}

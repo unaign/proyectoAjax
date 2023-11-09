@@ -1,0 +1,20 @@
+{% include "cabecera.twig" %}
+
+<div id="container">
+	<section id="sectionSesion">
+		<form action="../controlador/iniciar.php" method="post">
+			<h1>Iniciar Sesion</h1>
+{# 			<label for="email">Introduce tu correo</label>
+ #}			<input type="email" name="email" placeholder="Email" required>
+			<br>
+{# 			<label for="contrasena">Introduce tu contraseña</label>
+ #}			<input id="password" type="password" name="contrasena" placeholder="Contraseña" required>
+			<br>
+			<input type="submit" id="iniciar" class="bg-danger" value="Iniciar Sesión">
+				<h3>{{errores}}</h3>
+
+		</form>
+	</section>
+</div>
+
+{% include "footer.twig" %}

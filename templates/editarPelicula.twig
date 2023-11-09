@@ -1,0 +1,41 @@
+{% include "cabecera.twig" %}
+<div id="container">
+	<section>
+		<form action="../controlador/modificar.php" method="post" class="Pelicula">
+			<h1>Modificar una película nueva</h1>
+            <input type="hidden" name="idpelicula" value="{{resultado[0].idpelicula}}" class="atributosPeli">
+			<label for="titulo">Titulo</label>
+			<input type="text" name="titulo" value="{{resultado[0].titulo}}" class="atributosPeli" required>
+			<label for="tituloo">Titulo original</label>
+			<input type="text" name="tituloo" value="{{resultado[0].titulooriginal}}" class="atributosPeli">
+			<label for="sinopsis">Sinopsis</label>
+			<textarea name="sinopsis" class="sinopsis" required>"{{resultado[0].sinopsis}}"</textarea>
+			<label for="idiomao">Idioma original</label>
+			<input type="text" name="idiomao" value="{{resultado[0].idiomaoriginal}}" class="atributosPeli">
+			<label for="fondo">Fondo</label>
+			<input type="text" name="fondo" value="{{resultado[0].fondo}}" class="atributosPeli">
+			<label for="poster">Poster</label>
+			<input type="text" name="poster" value="{{resultado[0].poster}}" class="atributosPeli">
+			<label for="estreno">Fecha de estreno</label>
+			<input type="date" name="estreno" value="{{resultado[0].estreno}}" class="atributosPeli" required>
+			<label for="duracion">Duracion</label>
+			<input type="text" name="duracion" value="{{resultado[0].duracion}}" class="atributosPeli" required>
+			<label for="trailer">Trailer</label>
+			<input type="text" name="trailer" value="{{resultado[0].trailer}}" class="atributosPeli">
+			<label for="estado">Estado</label>
+			<input type="text" name="estado" value="{{resultado[0].estado}}" class="atributosPeli" required>
+			<label for="generos">Géneros</label>
+			<select name="generos" class="atributosPeli">
+				{% for columna in generos %}
+					<option value={{columna.idgenero}}
+                    {% if columna.idgenero == resultado[0].idgenero%}
+                    selected
+                    {% endif %}
+                    >{{columna.descripcion}}</option>
+				{% endfor %}
+			</select>
+			<input type="submit" value="Modificar Película" id="btnAnadir" class="bg-danger">
+		</form>
+	</section>
+</div>
+{% include "footer.twig" %}

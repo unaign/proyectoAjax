@@ -1,0 +1,6 @@
+{
+    "require": {
+        "twig/twig": "^3.5",
+        "components/jquery": "^3.6"
+    }
+}

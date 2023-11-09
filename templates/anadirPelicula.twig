@@ -1,0 +1,36 @@
+{% include "cabecera.twig" %}
+<div id="container">
+	<section id="">
+		<form action="../controlador/anadir.php" method="post" class="Pelicula">
+			<h1>Añadir una película nueva</h1>
+			<label for="titulo">Titulo</label>
+			<input type="text" name="titulo" class="atributosPeli" required> 
+			<label for="tituloo">Titulo original</label>
+			<input type="text" name="tituloo" class="atributosPeli">
+			<label for="sinopsis">Sinopsis</label>
+			<textarea name="sinopsis" class="sinopsis" required></textarea>
+			<label for="idiomao">Idioma original</label>
+			<input type="text" name="idiomao" class="atributosPeli">
+			<label for="fondo">Fondo</label>
+			<input type="text" name="fondo" class="atributosPeli">
+			<label for="poster">Poster</label>
+			<input type="text" name="poster" class="atributosPeli">
+			<label for="estreno">Fecha de estreno</label>
+			<input type="date" name="estreno" class="atributosPeli" required>
+			<label for="duracion">Duracion</label>
+			<input type="text" name="duracion"  class="atributosPeli" required>
+			<label for="trailer">Trailer</label>
+			<input type="text" name="trailer" class="atributosPeli">
+			<label for="estado">Estado</label>
+			<input type="text" name="estado" class="atributosPeli" required>
+			<label for="generos">Géneros</label>
+			<select name="generos" class="atributosPeli">
+				{% for columna in resultado %}
+					<option value={{columna.idgenero}}>{{columna.descripcion}}</option>
+				{% endfor %}
+			</select>
+			<input type="submit" value="Añadir nueva película" id="btnAnadir" class="bg-danger">
+		</form>
+	</section>
+</div>
+{% include "footer.twig" %}

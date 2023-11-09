@@ -1,0 +1,218 @@
+/*GENERAL*/
+body{
+    background-color: #F0F0F0;
+
+}
+
+input{
+    border-radius: 5px;
+    background: #f2f2f2;
+    border: 0;
+    width: 50%;
+}
+
+
+/**acerca.twig**/
+
+#cartelera{
+    margin-top: 20px;
+    margin-left: 3%;
+}
+
+#formulario{
+    margin-top: 5%;
+    margin-left:5%;
+}
+
+#fecha{
+    border-radius: 5px;
+    border: none;
+}
+#mostrarPelicula{
+    display: flex;
+    flex-direction: column;
+     margin-left: 2%;
+    
+} 
+
+#sectionMostrar{
+    display: flex;
+    flex-direction: row;
+}
+
+#botonMostrar{
+    width: 10%;
+}
+
+#sinPelicula{
+    margin-left: 10%;
+}
+
+#fecha2{
+    height: 40px;
+}
+
+#fecha{
+    background-color: white;
+}
+
+/**CSS estrenos**/
+
+
+
+section{
+    margin: 0 auto;
+    background-color: white;
+    width: 90%;
+    padding: 30px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 4px 4px 4px lightgrey;
+    margin-top: 2%;
+    font-size:15px;
+}
+
+
+#sectionPelicula{
+    display: flex;
+    flex-direction: row;
+}
+#pelicula{
+    display: flex;
+    flex-direction: column;
+    margin-left: 2%;
+    
+} 
+.foto{  
+    width:200px;
+    height: 20vw;
+    border-radius: 5px;
+}
+
+h1{
+    font-size: 3vw;
+}
+
+table{
+    font-size: 25px;
+}
+
+span{
+    font-weight: bold;
+}
+
+#p{
+    margin-bottom: 50px;
+}
+
+iframe{
+border-radius: 5px;
+}
+
+hr{
+    width: 10%;
+}
+#tabla{
+    margin-top: 40px;
+    background-color:white;
+    font-size: 10px;
+}
+#horario{
+    font-size: 2vw;
+    font-weight: bold;
+}
+td{
+    padding: 15px;
+}
+
+#horas{
+    font-weight: bold;
+}
+/*verPelicula.twig*/
+
+
+#botonEliminar{
+    margin-top: 15px;
+}
+
+#campo{
+    background-color: white;
+    width: 10%;
+}
+
+#botonAnadir{
+    margin-top: 30px;
+    margin-left: 5%;
+
+}
+
+/*inicioSesion.twig*/
+#sectionSesion{
+    font-size: 2vw;
+    margin-top: 80px;
+    width: 50%;
+    height: 500px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 2vw;
+    height: auto;
+
+}
+
+#iniciar{
+    margin-top: 20px;
+}
+
+#password{
+    margin-top: 20px;
+}
+footer{
+    height: auto;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top:42%;
+    padding: 2rem;
+    background: lightgrey;
+    color: black;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+        gap: 0.2rem;
+
+}
+
+/*anadirPelicula.twig*/
+
+.Pelicula{
+display: flex;
+flex-direction: column;
+}
+
+.atributosPeli{
+    width: 20%;
+}
+
+.sinopsis{
+    width: 25%;
+}
+
+#btnAnadir{
+    width: 15%;
+    height: 40px;
+    margin-top: 20px;
+}
+
+
+/*RESPONSIVE*/
+
+
+@media only screen and (max-width: 984px) {
+    #sectionSesion{
+    height: auto;
+    
+    }
+
+}

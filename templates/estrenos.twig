@@ -1,0 +1,49 @@
+{% include "cabecera.twig" %}
+<div id="container">
+
+	<section id="sectionPelicula">
+		{# {% for columna in resultado %}
+		 #}
+		<img src='https://image.tmdb.org/t/p/w185/{{resultado[0].poster}}' alt='Imagen Poster' class='foto'>
+		<article id="pelicula">
+			<h1>{{resultado[0].titulo}}</h1>
+			<hr>
+			<p id="p">
+				<br><span>titulo original:</span>
+				{{resultado[0].titulooriginal}}
+				<br><span>actores:</span>
+				{{resultado[0].NOMBRE}}
+				<br><span>duracion:</span>
+				{{resultado[0].duracion}}
+				min
+				<br><span>genero:</span>
+				{{resultado[0].genero}}
+				<br><span>fecha estreno:</span>
+				{{resultado[0].estreno}}
+				<br><span>sinopsis:</span>
+				{{resultado[0].sinopsis}}
+				<br>
+
+			</p>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/{{resultado[0].trailer}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+		
+		</article>
+	</section>
+
+	<section id="tabla">
+		<h1 id="horario">Horarios dia 20-04-2023<h1>
+		<hr>
+				<table>
+					{% for columna in resultado %}
+						<tr>
+							<td id="horas">{{columna.HORARIO}}</td>
+							<td>{{columna.sala}}</td>
+						</tr>
+					{% endfor %}
+				</table>
+			</section>
+		</div>
+
+
+		{% include "footer.twig" %}
